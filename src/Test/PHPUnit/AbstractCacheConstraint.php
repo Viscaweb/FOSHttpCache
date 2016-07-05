@@ -54,7 +54,7 @@ abstract class AbstractCacheConstraint extends \PHPUnit_Framework_Constraint
             );
         }
 
-        return $this->getValue() === (string) $other->getHeader($this->header);
+       return strpos((string) $other->getHeaderLine($this->header), $this->getValue()) !== false;
     }
 
     /**
